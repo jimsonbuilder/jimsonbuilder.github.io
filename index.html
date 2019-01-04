@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Jimson</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Jimson">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="Jimson">
+<meta property="og:locale" content="default">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Jimson">
+  
+    <link rel="alternate" href="/atom.xml" title="Jimson" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Jimson</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">努力，奋斗！</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-jQuery常用API说明" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/01/04/jQuery常用API说明/" class="article-date">
+  <time datetime="2019-01-04T13:41:37.329Z" itemprop="datePublished">2019-01-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/04/jQuery常用API说明/">jQuery常用API使用记录与说明</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><p><strong>eq(n)：</strong>返回被选元素中带有指定索引号的标签元素；</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"button"</span>).eq(<span class="number">0</span>);</span><br><span class="line"><span class="comment">// 返回索引号为0的button标签</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>addClass(类名)：</strong>给选中的元素添加类名；</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"li:first"</span>).addClass(<span class="string">"current"</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>removeClass(类名)：</strong>给选中的元素去除类名；</p>
+</li>
+<li><p><strong>hasClass(类名)：</strong> 判断指定元素中是否存在对应类名样式，返回布尔类型值，注意不支持查询多个类样式；</p>
+</li>
+<li><p><strong>toggleClass(“类名一  类名二”)：</strong>使jq对象样式在两个类名样式之间来回切换；</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"li:first"</span>).toggleClass(<span class="string">"current1 current2"</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>offset()：</strong>获取的是当前标签相对于窗口的位移信息(top|left)；</p>
+</li>
+<li><p><strong>position()：</strong>获取当前标签元素相对于父元素的位置信息(top|left)；</p>
+</li>
+<li><p><strong>text()：</strong>不传参则表示获取元素的文本内容，并拼接返回；传参则表示设置元素的文本内容为传递的参数内容；</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> res = $(<span class="string">"div.box"</span>).text();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>html()：</strong>不传参则表示获取所选中标签元素的第一个标签内容；传参则表示设置节点内容为传递的参数内容；</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"span"</span>).html(<span class="string">"&lt;h1&gt;我是小标题 啦啦啦~&lt;/h1&gt;"</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>siblings()：</strong>获取元素的兄弟元素；</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"li"</span>).addClass(<span class="string">"current"</span>).siblings()</span><br><span class="line"><span class="comment">// 获取类样式名为current的li标签的兄弟标签</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>filter()：</strong>根据自定义规则标准筛选元素，不匹配的元素被删除，匹配条件的元素返回；</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"div"</span>).filter(<span class="string">".box"</span>).css(<span class="string">"color"</span>,<span class="string">"red"</span>);</span><br><span class="line"><span class="comment">// 返回带有类名 "box" 的所有 &lt;div&gt; 元素：</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"div"</span>).children().filter(<span class="function"><span class="keyword">function</span> (<span class="params">i,dom</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">      <span class="comment">//该过滤器函数用来限定筛选的条件</span></span><br><span class="line">      <span class="comment">//该函数内部会开启一个循环,拿到每一个标签来和条件进行匹配(判断)</span></span><br><span class="line">      <span class="comment">//如果满足条件(true),那就保留,否则就删除(当前的每一个标签)</span></span><br><span class="line"></span><br><span class="line">      <span class="comment">//[1] this  指每次循环时div对应的一个直接子元素，与dom一样</span></span><br><span class="line">      <span class="comment">// console.log(i,dom,this);  i指对应的每个div的子元素的索引</span></span><br><span class="line">      <span class="comment">//[2] $("span",this);  第二个参数是限定范围(选择上下文)</span></span><br><span class="line"></span><br><span class="line">      <span class="keyword">return</span> $(<span class="string">"span"</span>,<span class="keyword">this</span>).length == <span class="number">2</span>;</span><br><span class="line">    &#125;).css(<span class="string">"background"</span>,<span class="string">"#392"</span>);</span><br></pre></td></tr></table></figure>
+<p>说明：filter的参数可以是一个函数，这个函数用于限定规则并返回。上面的例子的限定筛选条件是——找到div标签的直接子元素里包含2个span的那个元素。</p>
+</li>
+<li><p><strong>children()：</strong>返回被选元素的直接子元素；</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"div"</span>).children(<span class="string">".test"</span>).css(<span class="string">"color"</span>,<span class="string">"red"</span>);</span><br><span class="line"><span class="comment">// 返回类名为test的div的直接子元素</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>not()：</strong>方法与filter方法作用相反；</p>
+</li>
+<li><p><strong>add()：</strong>将获取的元素添加到已经匹配的元素集合中，合并后返回元素集合；</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">".box"</span>).children(<span class="string">"div"</span>).add(<span class="string">".box&gt;span"</span>).css(<span class="string">"color"</span>,<span class="string">"red"</span>);</span><br><span class="line"><span class="comment">// 将类样式名为box的元素里的直接子元素span添加到前面的匹配结果里返回</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>index()：</strong>返回指定元素的索引；</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">".box"</span>).children().filter(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">			<span class="keyword">return</span> $(<span class="string">"span"</span>,<span class="keyword">this</span>).length == <span class="number">2</span>;</span><br><span class="line">		&#125;).children().click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            alert($(<span class="keyword">this</span>).index());</span><br><span class="line">		&#125;)</span><br><span class="line"><span class="comment">//  $(this).index()返回当前被点击的span标签的索引，this指当前被点击的那个span标签</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>each()：</strong>为每个匹配元素规定要运行的函数；</p>
+<ul>
+<li>语法：$(selector).each(function(index,element));<ul>
+<li>index：匹配的元素索引；</li>
+<li>element：匹配的每个元素。</li>
+</ul>
+</li>
+<li>参数可以省略不写。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"li"</span>).each(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    alert($(<span class="keyword">this</span>).text());</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>animate()：</strong>jQuery动画方法，允许你创建自定义动画。animate默认提供队列功能，如果是多个动画的链式使用，则animate根据队列的先后顺序执行。</p>
+<ul>
+<li>语法：$(selector).animate({params},speed,callback);<ul>
+<li>params：给所选元素添加动画的属性（css属性）列表，必须；</li>
+<li>speed：动画效果时常，取值可以是”slow”,”fast”或者ms，默认是normal，可选；</li>
+<li>callback：动画完成后执行的回调函数，可以在该函数中再次使用动画效果，可选。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"div"</span>).animate(&#123;</span><br><span class="line">    top: <span class="string">"-50px"</span></span><br><span class="line">&#125;,<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    $(<span class="string">"others"</span>).css(&#123;</span><br><span class="line">        ......</span><br><span class="line">    &#125;).animate(&#123;</span><br><span class="line">        ......</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>注意：当使用 animate() 时，必须使用 Camel 标记法书写所有的属性名，比如，必须使用 paddingLeft 而不是 padding-left，使用 marginRight 而不是 margin-right，等等。</p>
+</li>
+<li><p><strong>on()：</strong>给方法给被选元素或其子元素添加一个或多个事件。可运用于事件委托。</p>
+<ul>
+<li>语法：$(selector).on(event,childSelector,data,function);<ul>
+<li>event：规定添加到元素的一个或多个事件，可由空格隔开，给出多个；</li>
+<li>childSelector：规定只能添加事件的子元素（常见于事件委托）；</li>
+<li>data：给方法传递的额外数据，可以通过function里的e对象获取；</li>
+<li>function：当事件发生时运行的函数。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 一般调用</span></span><br><span class="line">$(<span class="string">"button"</span>).on(<span class="string">"click"</span>,&#123;<span class="attr">name</span>:<span class="string">"zs"</span>,<span class="attr">age</span>:<span class="number">19</span>&#125;,<span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//console.dir(e.data.name);</span></span><br><span class="line">    <span class="built_in">console</span>.log(e.currentTarget);</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//事件委托:委托ul标签给该标签子孙节点中所有的li标签添加点击事件</span></span><br><span class="line"><span class="comment">//优点:(1) 可以给尚未存在或者是还没有被创建出来的标签绑定事件 (2) 提升性能</span></span><br><span class="line">$(<span class="string">"ul"</span>).on(<span class="string">"click"</span>,<span class="string">"li"</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log($(<span class="keyword">this</span>).html());</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>off()：</strong>和on方法相反，注销元素身上由on方法添加的事件。</p>
+<ul>
+<li>语法：$(selector).off(event,selector,function,map);<ul>
+<li>event：移除的事件名；</li>
+<li>selector：需要移除事件的当时通过on方法添加事件的元素；</li>
+<li>function：事件发生时要执行的函数；</li>
+<li>map：规定事件映射 ({event:function, event:function, …})，包含要添加到元素的一个或多个事件，以及当事件发生时运行的函数。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>event.stopPropagation()：</strong>阻止事件冒泡到父元素（DOM树顶端）。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 单击span标签，将只触发span身上的单击事件</span></span><br><span class="line">$(<span class="string">"span"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</span><br><span class="line">    <span class="comment">// 阻止事件冒泡</span></span><br><span class="line">    event.stopPropagation();</span><br><span class="line">    alert(<span class="string">"The span element was clicked."</span>);</span><br><span class="line">    <span class="comment">// return false;</span></span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 单击p标签将触发p的单击事件和父元素div的单击事件</span></span><br><span class="line">$(<span class="string">"p"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</span><br><span class="line">    alert(<span class="string">"The p element was clicked."</span>);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 单击触发div的单击事件</span></span><br><span class="line">$(<span class="string">"div"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    alert(<span class="string">"The div element was clicked."</span>);</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+<p>注： 另外return false也可以阻止事件冒泡，但是要注意语句位置，一般是放于事件执行末尾。</p>
+</li>
+<li><p><strong>event.preventDefault()：</strong>阻止元素的默认事件发生，如阻止a元素的打开链接的默认事件、阻止提交按钮点击时表单提交数据的默认事件……</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 阻止a标签默认打开链接的事件</span></span><br><span class="line">$(<span class="string">"a"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</span><br><span class="line">    event.preventDefault();</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 阻止表单的提交按钮默认的数据提交事件</span></span><br><span class="line">$(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</span><br><span class="line">    event.preventDefault();</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>注意：可以使用isDefaultPrevented()方法检测元素是否调用了preventDefault方法。另外，return false也可以阻止元素的默认事件发生。</p>
+</li>
+<li><p><strong>trigger()：</strong>触发被选所有元素的指定事件，且会触发默认事件和事件冒泡。</p>
+<ul>
+<li>语法：$(selector).trigger(event,param1,params……);<ul>
+<li>event：触发的事件，必须；</li>
+<li>params：给触发方法传递的其他额外参数，可选。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$( <span class="string">"#old"</span> ).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  $( <span class="string">"input"</span> ).trigger( <span class="string">"focus"</span> );</span><br><span class="line">&#125;);</span><br><span class="line">$( <span class="string">"#new"</span> ).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  $( <span class="string">"input"</span> ).triggerHandler( <span class="string">"focus"</span> );</span><br><span class="line">&#125;);</span><br><span class="line">$( <span class="string">"input"</span> ).focus(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  $( <span class="string">"&lt;span&gt;获取焦点!&lt;/span&gt;"</span> ).appendTo( <span class="string">"body"</span> ).fadeOut( <span class="number">1000</span> );</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>说明：两个方法的区别：</p>
+<p><img src="C:\Users\jimson\AppData\Roaming\Typora\typora-user-images\1546242430541.png" alt="1546242430541"></p>
+</li>
+<li><p><strong>triggerHandler()：</strong>与trigger方法类似——触发被选元素的指定事件，唯独不同的是该方法不会触发元素的默认事件和事件冒泡，且只触发所选元素中第一个元素的事件。语法与trigger一样。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"input"</span>).select(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    $(<span class="string">"input"</span>).after(<span class="string">"something"</span>);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">$(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    $(<span class="string">"input"</span>).triggerHandler(<span class="string">"select"</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>说明：以上两个方法都可以触发自定义事件，举例：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        $(<span class="keyword">this</span>).on(<span class="string">"diyEvent"</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="comment">// this指window对象</span></span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">"触发自定义事件"</span>);</span><br><span class="line">		&#125;);</span><br><span class="line">        <span class="keyword">var</span> num;</span><br><span class="line">        <span class="keyword">var</span> timer;</span><br><span class="line">        timer = setInterval(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">			$(<span class="string">"button"</span>).trigger(<span class="string">"diyEvent"</span>);</span><br><span class="line">		&#125;,<span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (num &gt;= <span class="number">10</span>) &#123;</span><br><span class="line">        	clearInterval(timer);</span><br><span class="line">        &#125;</span><br><span class="line">	&#125;)</span><br></pre></td></tr></table></figure>
+<p>注：使用定时器触发自定义事件。</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/01/04/jQuery常用API说明/" data-id="cjqi391pg00004otxxy2b7vqe" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/01/04/hello-world/" class="article-date">
+  <time datetime="2019-01-04T13:20:41.145Z" itemprop="datePublished">2019-01-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/04/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/01/04/hello-world/" data-id="cjqi2np440000fctxh0wsv8to" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/01/04/jQuery常用API说明/">jQuery常用API使用记录与说明</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/04/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
