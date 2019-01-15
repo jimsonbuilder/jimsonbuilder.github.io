@@ -7,17 +7,17 @@
   
   <title>网络编程基本概念 | Jimson</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="网络编程基本概念1、web服务器：安装了支持HTTP协议的软件的电脑，我们诚挚为HTTP服务器（文本服务器）； 2、支持HTTP协议的软件：Apache、IIS、tomcat、Nginx、NodeJS等； 3、访问网页的基本过程：  客户端（一般指浏览器）向服务器发送资源请求，比如一个网页请求、用户登录时的信息验证请求、文件请求等等； 例如：在浏览器地址栏输入“https://www.baidu.">
+  <meta name="description" content="1、web服务器：安装了支持HTTP协议的软件的电脑，我们称之为HTTP服务器（文本服务器）； 2、支持HTTP协议的软件：Apache、IIS、tomcat、Nginx、NodeJS等； 3、访问网页的基本过程：  客户端（一般指浏览器）向服务器发送资源请求，比如一个网页请求、用户登录时的信息验证请求、文件请求等等； 例如：在浏览器地址栏输入“https://www.baidu.com/”，则在">
 <meta property="og:type" content="article">
 <meta property="og:title" content="网络编程基本概念">
 <meta property="og:url" content="http://yoursite.com/2019/01/15/网络编程基本概念/index.html">
 <meta property="og:site_name" content="Jimson">
-<meta property="og:description" content="网络编程基本概念1、web服务器：安装了支持HTTP协议的软件的电脑，我们诚挚为HTTP服务器（文本服务器）； 2、支持HTTP协议的软件：Apache、IIS、tomcat、Nginx、NodeJS等； 3、访问网页的基本过程：  客户端（一般指浏览器）向服务器发送资源请求，比如一个网页请求、用户登录时的信息验证请求、文件请求等等； 例如：在浏览器地址栏输入“https://www.baidu.">
+<meta property="og:description" content="1、web服务器：安装了支持HTTP协议的软件的电脑，我们称之为HTTP服务器（文本服务器）； 2、支持HTTP协议的软件：Apache、IIS、tomcat、Nginx、NodeJS等； 3、访问网页的基本过程：  客户端（一般指浏览器）向服务器发送资源请求，比如一个网页请求、用户登录时的信息验证请求、文件请求等等； 例如：在浏览器地址栏输入“https://www.baidu.com/”，则在">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-15T05:00:59.304Z">
+<meta property="og:updated_time" content="2019-01-15T11:32:48.615Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="网络编程基本概念">
-<meta name="twitter:description" content="网络编程基本概念1、web服务器：安装了支持HTTP协议的软件的电脑，我们诚挚为HTTP服务器（文本服务器）； 2、支持HTTP协议的软件：Apache、IIS、tomcat、Nginx、NodeJS等； 3、访问网页的基本过程：  客户端（一般指浏览器）向服务器发送资源请求，比如一个网页请求、用户登录时的信息验证请求、文件请求等等； 例如：在浏览器地址栏输入“https://www.baidu.">
+<meta name="twitter:description" content="1、web服务器：安装了支持HTTP协议的软件的电脑，我们称之为HTTP服务器（文本服务器）； 2、支持HTTP协议的软件：Apache、IIS、tomcat、Nginx、NodeJS等； 3、访问网页的基本过程：  客户端（一般指浏览器）向服务器发送资源请求，比如一个网页请求、用户登录时的信息验证请求、文件请求等等； 例如：在浏览器地址栏输入“https://www.baidu.com/”，则在">
   
     <link rel="alternate" href="/atom.xml" title="Jimson" type="application/atom+xml">
   
@@ -90,15 +90,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="网络编程基本概念"><a href="#网络编程基本概念" class="headerlink" title="网络编程基本概念"></a>网络编程基本概念</h3><p><strong>1、web服务器：</strong>安装了支持HTTP协议的软件的电脑，我们诚挚为HTTP服务器（文本服务器）；</p>
+        <p><strong>1、web服务器：</strong>安装了支持HTTP协议的软件的电脑，我们称之为HTTP服务器（文本服务器）；</p>
 <p><strong>2、支持HTTP协议的软件：</strong>Apache、IIS、tomcat、Nginx、NodeJS等；</p>
 <p><strong>3、访问网页的基本过程：</strong></p>
 <ul>
 <li><p>客户端（一般指浏览器）向服务器发送资源请求，比如一个网页请求、用户登录时的信息验证请求、文件请求等等；</p>
-<p>例如：在浏览器地址栏输入“<a href="https://www.baidu.com/”，则在按下回车的时候，客户端浏览器向百度的服务器发送了一个网页请求，这个请求想要请求索取的资源就是地址栏输入的URL（统一资源定位符）所指向的互联网上的资源，这个URL所指向的是百度首页，所以百度服务器返回百度首页资源给你。当然，这个首页包含的资源不仅仅只有www.baidu.com这一个html静态页面，还有这个页面请求的请求体里包含的客户端发给服务器端的数据（这些数据在请求头里有描述，如cookie、Referer等），还有css样式文件，js脚本文件和其他诸如png图片等等资源。" target="_blank" rel="noopener">https://www.baidu.com/”，则在按下回车的时候，客户端浏览器向百度的服务器发送了一个网页请求，这个请求想要请求索取的资源就是地址栏输入的URL（统一资源定位符）所指向的互联网上的资源，这个URL所指向的是百度首页，所以百度服务器返回百度首页资源给你。当然，这个首页包含的资源不仅仅只有www.baidu.com这一个html静态页面，还有这个页面请求的请求体里包含的客户端发给服务器端的数据（这些数据在请求头里有描述，如cookie、Referer等），还有css样式文件，js脚本文件和其他诸如png图片等等资源。</a></p>
+<p>例如：在浏览器地址栏输入“<a href="https://www.baidu.com/”，则在按下回车的时候，客户端浏览器向百度的服务器发送了一个网页请求，这个请求想要请求索取的资源就是地址栏输入的URL（统一资源定位符）所指向的互联网上的资源，这个URL所指向的是百度首页，所以百度服务器返回百度首页资源给你。当然，这个首页包含的资源不仅仅只有www.baidu.com这一个html静态页面，还有服务器端返回给客户端的其他数据，比如css样式文件，js脚本文件和其他数据，诸如png图片等等资源。*" target="_blank" rel="noopener">https://www.baidu.com/”，则在按下回车的时候，客户端浏览器向百度的服务器发送了一个网页请求，这个请求想要请求索取的资源就是地址栏输入的URL（统一资源定位符）所指向的互联网上的资源，这个URL所指向的是百度首页，所以百度服务器返回百度首页资源给你。当然，这个首页包含的资源不仅仅只有www.baidu.com这一个html静态页面，还有服务器端返回给客户端的其他数据，比如css样式文件，js脚本文件和其他数据，诸如png图片等等资源。*</a>*<font color="#ac0">另外，首次请求访问时，服务器还会给客户端返回一个标记，这个标记用于标明这个客户端，下次服务器就能根据这个标记识别是哪个客户端。这个标记就是cookie。</font>**</p>
 <ul>
-<li>请求头：存放的是描述信息，描述的是客户端和请求本身，比如浏览器是什么版本类型、cookie数据等等；</li>
-<li>请求体：客户端发送给服务器端的数据。</li>
+<li><strong>请求头：</strong>存放的是描述信息，描述的是客户端和请求本身，比如浏览器是什么版本类型、第一次请求时浏览器返回的和第二次发送请求时要携带的cookie数据等等；</li>
+<li><strong>请求体：</strong>客户端发送给服务器端的数据；</li>
+<li><strong>cookie：</strong>首次客户端发送请求访问时，服务器给这个请求返回结果添加的标记，为了指明对应的客户端。这个可以查看响应头“response headers”得知，里面有set-cookie字段。</li>
 </ul>
 <p>以上两个概念是请求报文的概念，响应报文概念类似，不再赘述。</p>
 </li>
@@ -113,30 +114,37 @@
 </li>
 <li><p>找到服务器，服务器接收请求报文，对请求报文做解析处理；</p>
 </li>
-<li><p>服务器处理完请求报文，将结果通过响应报文返回给浏览器；</p>
+<li><p>服务器处理完请求报文，将结果通过响应报文返回给浏览器（这一结果中就夹杂着cookie）；</p>
 </li>
 <li><p>浏览器解析服务器返回的响应报文，将结果显示出来。</p>
 <ul>
-<li><p>URL：统一资源定位符，客户端就是通过它找到想要连接和发送请求的服务器的。</p>
+<li><p><strong>URL：</strong>统一资源定位符，客户端就是通过它找到想要发送请求的服务器的。</p>
 <p>URL举例：</p>
 <figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">http://www.520it.com</span></span><br><span class="line"><span class="attribute">https://www.baidu.com</span></span><br><span class="line">https://www.baidu.com/s?ie=utf-8&amp;f=3&amp;rsv_bp=0&amp;rsv_idx=1&amp;tn=78000241_hao_pg&amp;wd=test...</span><br><span class="line"><span class="attribute">https://www.jd.com</span></span><br><span class="line"><span class="attribute">https://miaosha.jd.com/#4048588</span></span><br><span class="line"><span class="attribute">......</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>URI：统一资源标记符，URL是它的子集。</p>
+<li><p><strong>URI：</strong>统一资源标记符，URL是它的子集。</p>
 </li>
 </ul>
 </li>
 </ul>
-<p><strong>5、协议：</strong>互联网上的网络设备通信之间的规则，比如使用什么语言、通讯设备之间怎样建立联系、双方之间建立通信的顺序等等，这一系列规则统称协议（protocol）。</p>
+<p><strong>5、协议：</strong>互联网上的网络设备通信之间的规则，比如使用什么语言、通讯设备之间怎样建立联系、双方之间建立通信的顺序等等，这一系列规则统称<strong>协议（protocol）</strong>。</p>
 <p><strong>6、TCP/IP协议簇：</strong>所有网络服务的基础，其他协议的统称，采用分层设计思想。</p>
-<p><strong>7、TCP/IP分层模型：</strong>从上到下：应用层、传输层、互联网层、网卡层和硬件层。</p>
+<p><strong>7、TCP/IP分层模型：</strong>从上到下：<u>应用层、传输层、互联网层、网卡层和硬件层。</u></p>
 <p><strong>8、HTTP协议：</strong>TCP/IP协议簇内部的一个子集，规定客户端和服务器端之间的数据传输格式，以明文方式传输，位于分层模型的应用层。</p>
 <p><strong>9、DNS：</strong>与HTTP协议一样位于应用层，它提供域名和IP地址之间的解析服务。</p>
-<p><strong>10、请求报文：</strong><br>HTTP请求报文由两部分组成：请求首部（请求行 + 请求头）和请求主体。</p>
+<p><strong>10、请求报文：</strong><br>HTTP请求报文由两部分组成：<u>请求首部（请求行 + 请求头）和请求主体。</u></p>
 <p>请求行：表明请求的方法和资源等信息。<br>请求头：存放的是对客户端以及请求本身的描述信息。<br>请求体：如果是POST请求，则存放发送给服务器的参数。</p>
 <p><strong>11、响应报文：</strong><br>HTTP响应报文由两部分组成：响应首部（状态行 + 响应头）和响应主体。</p>
-<p>状态行：表明网络请求的状态。<br>响应头：存放的是对服务器以及响应本身的描述信息。<br>响应体：返回给客户端的具体数据。</p>
+<ul>
+<li>状态行：表明网络请求的状态。 </li>
+<li>响应头：存放的是对服务器以及响应本身的描述信息。 </li>
+<li>响应体：返回给客户端的具体数据。</li>
+</ul>
 <p><strong>12、GET请求和POST请求：</strong><br>GET和POST的主要区别表现在参数的处理方式不同。</p>
-<p>GET请求：提交的参数直接以查询字符串的方式跟在请求URL的后面。<br>POST请求：参数存放在请求体中进行提交。</p>
+<ul>
+<li>GET请求：提交的参数直接以查询字符串的方式跟在请求URL的后面。 </li>
+<li>POST请求：参数存放在请求体中进行提交。</li>
+</ul>
 <p>GET请求和POST请求对比</p>
 <p>① 参数处理方式不同。<br>② 安全性不同。<br>③ 大小限制。</p>
 <p>请求路径示例：</p>
@@ -145,7 +153,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/15/网络编程基本概念/" data-id="cjqxayodf000284txqrhy6h9j" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/15/网络编程基本概念/" data-id="cjqxoivls0000wctxp0aw2b12" class="article-share-link">Share</a>
       
       
     </footer>
