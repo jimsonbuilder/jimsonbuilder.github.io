@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Jimson">
 <meta property="og:description" content="1、web服务器：安装了支持HTTP协议的软件的电脑，我们称之为HTTP服务器（文本服务器）； 2、支持HTTP协议的软件：Apache、IIS、tomcat、Nginx、NodeJS等； 3、访问网页的基本过程：  客户端（一般指浏览器）向服务器发送资源请求，比如一个网页请求、用户登录时的信息验证请求、文件请求等等； 例如：在浏览器地址栏输入“https://www.baidu.com/”，则在">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-15T11:32:48.615Z">
+<meta property="og:updated_time" content="2019-01-15T11:37:44.393Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="网络编程基本概念">
 <meta name="twitter:description" content="1、web服务器：安装了支持HTTP协议的软件的电脑，我们称之为HTTP服务器（文本服务器）； 2、支持HTTP协议的软件：Apache、IIS、tomcat、Nginx、NodeJS等； 3、访问网页的基本过程：  客户端（一般指浏览器）向服务器发送资源请求，比如一个网页请求、用户登录时的信息验证请求、文件请求等等； 例如：在浏览器地址栏输入“https://www.baidu.com/”，则在">
@@ -97,7 +97,7 @@
 <li><p>客户端（一般指浏览器）向服务器发送资源请求，比如一个网页请求、用户登录时的信息验证请求、文件请求等等；</p>
 <p>例如：在浏览器地址栏输入“<a href="https://www.baidu.com/”，则在按下回车的时候，客户端浏览器向百度的服务器发送了一个网页请求，这个请求想要请求索取的资源就是地址栏输入的URL（统一资源定位符）所指向的互联网上的资源，这个URL所指向的是百度首页，所以百度服务器返回百度首页资源给你。当然，这个首页包含的资源不仅仅只有www.baidu.com这一个html静态页面，还有服务器端返回给客户端的其他数据，比如css样式文件，js脚本文件和其他数据，诸如png图片等等资源。*" target="_blank" rel="noopener">https://www.baidu.com/”，则在按下回车的时候，客户端浏览器向百度的服务器发送了一个网页请求，这个请求想要请求索取的资源就是地址栏输入的URL（统一资源定位符）所指向的互联网上的资源，这个URL所指向的是百度首页，所以百度服务器返回百度首页资源给你。当然，这个首页包含的资源不仅仅只有www.baidu.com这一个html静态页面，还有服务器端返回给客户端的其他数据，比如css样式文件，js脚本文件和其他数据，诸如png图片等等资源。*</a>*<font color="#ac0">另外，首次请求访问时，服务器还会给客户端返回一个标记，这个标记用于标明这个客户端，下次服务器就能根据这个标记识别是哪个客户端。这个标记就是cookie。</font>**</p>
 <ul>
-<li><strong>请求头：</strong>存放的是描述信息，描述的是客户端和请求本身，比如浏览器是什么版本类型、第一次请求时浏览器返回的和第二次发送请求时要携带的cookie数据等等；</li>
+<li><strong>请求头：</strong>存放的是描述信息，描述的是客户端和请求本身，比如浏览器是什么版本类型、cookie数据（这个cookie数据是第一次请求时服务器返回的和第二次要发送请求时要携带的）等等；</li>
 <li><strong>请求体：</strong>客户端发送给服务器端的数据；</li>
 <li><strong>cookie：</strong>首次客户端发送请求访问时，服务器给这个请求返回结果添加的标记，为了指明对应的客户端。这个可以查看响应头“response headers”得知，里面有set-cookie字段。</li>
 </ul>
@@ -153,7 +153,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/15/网络编程基本概念/" data-id="cjqxoivls0000wctxp0aw2b12" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/15/网络编程基本概念/" data-id="cjqxoo5vs0002w4txts0p6uku" class="article-share-link">Share</a>
       
       
     </footer>
