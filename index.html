@@ -66,6 +66,81 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-数据安全相关概念" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/01/16/数据安全相关概念/" class="article-date">
+  <time datetime="2019-01-16T05:50:44.661Z" itemprop="datePublished">2019-01-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/16/数据安全相关概念/">数据安全相关概念</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>这里只说明web开发相关的数据安全相关的概念，其他信息安全概念以后再说。</p>
+<p><strong>1、web开发安全范围</strong></p>
+<ul>
+<li>SQL注入；</li>
+<li>XSS；</li>
+<li>跨域脚本攻击……</li>
+</ul>
+<p><strong>2、数据安全范围</strong></p>
+<p>隐私数据：用户名、密码、银行卡号、身份证号……</p>
+<p><strong>3、解决数据安全的手段</strong></p>
+<ul>
+<li>给数据加密，涉及到加密和加密算法的一些概念；</li>
+<li>使用更加安全的协议（https）；</li>
+<li>其他</li>
+</ul>
+<p><strong>4、加密的一些概念</strong></p>
+<ul>
+<li>明文：用户定义的、可见可识别的、且通常有意义的字符或字符串；</li>
+<li>密文：经过加密算法加密的、正常情况无法识别的杂乱无章的字符串，可通过秘钥解密查看原来的明文（单向加密情况除外，单向加密无法通过秘钥解密）</li>
+<li>加密：使明文字符串转换为密文的过程，通常涉及加密算法。</li>
+</ul>
+<p>举例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">明文：loveMyself</span><br><span class="line">密文：FHSJFKSHJFHJSFJKSHJIWIHOQNFN</span><br></pre></td></tr></table></figure>
+<p><strong>5、Base64编码</strong></p>
+<p>它不是一种加密算法，而是一种编码格式。能把任意数据转换为字符串（文本数据）。通常使用它进行编码和解码操作。</p>
+<p>常用的使用Base64进行编码和解码的命令如下：</p>
+<ul>
+<li>base64对字符串进行编码|解码:</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> -n <span class="string">"520lily"</span> | base64</span><br><span class="line">$ <span class="built_in">echo</span> -n <span class="string">"NTIwbGlseQ=="</span> | base64 -d</span><br></pre></td></tr></table></figure>
+<ul>
+<li>base64对文件进行编码|解码:</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ openssl base64 -<span class="keyword">in</span> 123.png -out 123.txt</span><br><span class="line">$ openssl base64 -d -<span class="keyword">in</span> 123.txt -out demo.png</span><br></pre></td></tr></table></figure>
+<p><strong>6、其他加密方式</strong></p>
+<p>md5字符串|文件加密:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> -n <span class="string">"jimson"</span> | openssl md5</span><br><span class="line">$ openssl md5 123.png</span><br></pre></td></tr></table></figure>
+<p>其他加密：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SHA1(40)             $  <span class="built_in">echo</span> -n <span class="string">"520lily"</span> | openssl sha -sha1</span><br><span class="line">SHA256(64)           $  <span class="built_in">echo</span> -n <span class="string">"520lily"</span> | openssl sha -sha256</span><br><span class="line">SHA512(128)          $  <span class="built_in">echo</span> -n <span class="string">"520lily"</span> | openssl sha -sha512</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/01/16/数据安全相关概念/" data-id="cjqyrpmv30002s8tx9q12ncrb" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-闭包理解" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/01/16/闭包理解/" class="article-date">
@@ -138,7 +213,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/16/闭包理解/" data-id="cjqyrmtd20003ygtx5t0j6xm8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/16/闭包理解/" data-id="cjqyrpmv90004s8txlvyfjjal" class="article-share-link">Share</a>
       
       
     </footer>
@@ -203,7 +278,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/15/报文的结构/" data-id="cjqyrmtcu0001ygtx0d9lqffb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/15/报文的结构/" data-id="cjqyrpmuy0001s8txjsb3fw3h" class="article-share-link">Share</a>
       
       
     </footer>
@@ -298,7 +373,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/15/网络编程基本概念/" data-id="cjqyrmtcz0002ygtxjkqxe22s" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/15/网络编程基本概念/" data-id="cjqyrpmv60003s8txpwcrijp7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -450,7 +525,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/04/jQuery常用API说明/" data-id="cjqyrmtdb0004ygtx6e0odd0a" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/04/jQuery常用API说明/" data-id="cjqyrpmvh0005s8tx10dfsbsx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -495,7 +570,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/04/hello-world/" data-id="cjqyrmtcg0000ygtxybpgp3p2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/04/hello-world/" data-id="cjqyrpmul0000s8txtxpuhjsh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -536,6 +611,10 @@
       <ul>
         
           <li>
+            <a href="/2019/01/16/数据安全相关概念/">数据安全相关概念</a>
+          </li>
+        
+          <li>
             <a href="/2019/01/16/闭包理解/">闭包理解</a>
           </li>
         
@@ -549,10 +628,6 @@
         
           <li>
             <a href="/2019/01/04/jQuery常用API说明/">jQuery常用API使用记录与说明</a>
-          </li>
-        
-          <li>
-            <a href="/2019/01/04/hello-world/">Hello World</a>
           </li>
         
       </ul>
