@@ -66,6 +66,88 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-闭包理解" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/01/16/闭包理解/" class="article-date">
+  <time datetime="2019-01-16T05:08:18.205Z" itemprop="datePublished">2019-01-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/16/闭包理解/">闭包理解</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>闭包的一些理解：</p>
+<ul>
+<li><p>一个函数在函数内部使用了不属于自己的变量的情况；</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> num = <span class="number">123</span>;</span><br><span class="line">    <span class="comment">// 函数定义形式是匿名函数</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">b</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(num);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> fn = test();</span><br><span class="line">fn();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>一个闭包就是当一个函数返回时，一个没有释放资源的栈区；</p>
+</li>
+<li><p>但凡一个内部函数，被保存到外部（return出去）执行，就会形成闭包。</p>
+<ul>
+<li><p>内部定义可以是匿名函数赋值给一个变量，然后返回变量的情况。举例：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> test = <span class="literal">null</span>;</span><br><span class="line">    <span class="comment">// 函数定义形式是匿名函数</span></span><br><span class="line">    test = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"test"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> test;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> fn = test();</span><br><span class="line">fn();</span><br></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">test</span><br></pre></td></tr></table></figure>
+<p>此种情况即为闭包。</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>​    简单的理解就是，在自己的作用域内使用了不属于自己的变量的情况，这种情况一般表现为：<font color="red"><strong><em>在函数（如函数a）外部调用了函数（函数a）内部的函数（如函数b），而此时函数b内部使用了a的变量或不使用a的变量的情况。</em></strong></font>要理解闭包，需要理解<strong>作用域、全局变量、局部变量、变量生命周期</strong>、<strong>内嵌函数</strong>和<strong>匿名函数自调</strong>等概念。</p>
+<ul>
+<li><strong>全局变量：</strong>JavaScript程序中所有作用域内均可使用的变量；</li>
+<li><strong>局部变量：</strong>只能在自己的作用域内访问的变量，一般在函数内部；</li>
+<li><strong>作用域：</strong>分为全局作用域和局部作用域，全局作用域下的变量在其他作用域内均可使用，局部作用域可以访问它上层作用域的变量，但是不能访问下层作用域的变量（所以需要使用闭包）；</li>
+<li><strong>变量生命周期：</strong>全局变量在整个程序范围均可使用，程序结束后销毁（如关闭网页等操作）；局部变量只能在自己的范围内生效（一般是函数），脱离自己的范围不起作用；</li>
+<li><strong>内嵌函数：</strong>函数内部使用函数的情况；</li>
+<li><strong>匿名函数自调：</strong>当我们给匿名函数外面加上一层（）的时候，匿名函数就变成了函数表达式，在JavaScript解释的时候就会被立即执行；</li>
+<li><strong>另外，</strong>声明变量时如果不使用var关键字，则声明的变量是全局变量，即便这个变量的声明是在函数内部。</li>
+</ul>
+<p>下面对闭包概念进行说明。</p>
+<p><strong>以计时器计数代码为例：</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addCount</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> counter = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">return</span> counter += <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(addCount());</span><br><span class="line"><span class="built_in">console</span>.log(addCount());</span><br><span class="line"><span class="built_in">console</span>.log(addCount());</span><br></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p><strong>分析：</strong>因为每次调用时counter均被重新定义初始化为0，每次返回的值都为1。</p>
+<p><strong>内嵌函数解决上面的问题</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addCount</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> counter = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 内嵌函数</span></span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">plus</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">		counter += <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">    </span><br><span class="line">	plus();</span><br><span class="line">	plus();</span><br><span class="line">	<span class="keyword">return</span> counter;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(addCount());</span><br></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2</span></span><br></pre></td></tr></table></figure>
+<p><strong>分析：</strong>在函数内部调用内嵌函数，很好地解决了counter被重新定义初始化为0的情况。但是如何在addCount函数外部调用内嵌函数plus呢，这就要使用闭包思想了。在说明闭包之前先了解一下匿名函数自调。</p>
+<p><strong>匿名函数自调</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 一般形式</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">num1,num2</span>) </span>&#123;</span><br><span class="line">    alert(num1+num2);</span><br><span class="line">&#125;)(<span class="number">1</span>,<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 变形形式</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">num1,num2</span>) </span>&#123;</span><br><span class="line">    alert(num1+num2);</span><br><span class="line">&#125;(<span class="number">1</span>,<span class="number">2</span>)); </span><br><span class="line"></span><br><span class="line"><span class="comment">// void形式</span></span><br><span class="line"><span class="keyword">void</span> <span class="function"><span class="keyword">function</span>(<span class="params">num1,num2</span>) </span>&#123;</span><br><span class="line">    alert(num1+num2);</span><br><span class="line">&#125;(<span class="number">1</span>,<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 其余形式</span></span><br><span class="line">!<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; </span><br><span class="line">    x = x<span class="number">-1</span>;</span><br><span class="line">    alert(x);</span><br><span class="line"> &#125;(<span class="number">9</span>); </span><br><span class="line"></span><br><span class="line">-<span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>)</span>&#123;</span><br><span class="line">    alert(x+y);</span><br><span class="line">    <span class="keyword">return</span> x+y;</span><br><span class="line">&#125;(<span class="number">3</span>,<span class="number">4</span>);</span><br><span class="line"></span><br><span class="line">+<span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>)</span>&#123;</span><br><span class="line">    alert(x+y);</span><br><span class="line">    <span class="keyword">return</span> x+y;</span><br><span class="line">&#125;(<span class="number">3</span>,<span class="number">4</span>);</span><br><span class="line"></span><br><span class="line">--<span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>)</span>&#123;</span><br><span class="line">    alert(x+y);</span><br><span class="line">    <span class="keyword">return</span> x+y;</span><br><span class="line">&#125;(<span class="number">3</span>,<span class="number">4</span>);</span><br><span class="line"></span><br><span class="line">++<span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>)</span>&#123;</span><br><span class="line">    alert(x+y);</span><br><span class="line">    <span class="keyword">return</span> x+y;</span><br><span class="line">&#125;(<span class="number">3</span>,<span class="number">4</span>);</span><br><span class="line"><span class="comment">// 还有其他很多形式......</span></span><br></pre></td></tr></table></figure>
+<p><strong>闭包思想</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> add = (<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="keyword">var</span> counter = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> counter += <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">	&#125;)();</span><br><span class="line"></span><br><span class="line">	<span class="built_in">console</span>.log(add());</span><br><span class="line">	<span class="built_in">console</span>.log(add());</span><br><span class="line">	<span class="built_in">console</span>.log(add());</span><br></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">3</span></span><br></pre></td></tr></table></figure>
+<p><strong>分析：</strong>匿名函数只自调一次（立即执行函数），设置计数器counter为 0，并返回函数表达式（return语句）。此时add可以作为函数调用，但每次调用add函数时，因为此时匿名函数相当于没有释放资源的栈区，调用add相当于本文前面所说的addCount函数内部调用内嵌函数plus的情况，此时可以访问到上一层作用域的counter变量。此种情况就称为闭包了，此时函数拥有上层作用域的私有变量counter成为可能（即在函数内部使用了不属于自己的变量），而且counter是受匿名函数作用域保护的，只能通过add函数修改。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/01/16/闭包理解/" data-id="cjqyq8akr0000wgtxkzxqv9eb" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-报文的结构" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/01/15/报文的结构/" class="article-date">
@@ -121,7 +203,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/15/报文的结构/" data-id="cjqxoo5vn0001w4tx3yfgpznt" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/15/报文的结构/" data-id="cjqyq8amy0003wgtxn0iflit7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -216,7 +298,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/15/网络编程基本概念/" data-id="cjqxoo5vs0002w4txts0p6uku" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/15/网络编程基本概念/" data-id="cjqyq8amv0002wgtx4m3qb2g2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -368,7 +450,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/04/jQuery常用API说明/" data-id="cjqxoo5w40003w4tx2jaeqn4z" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/04/jQuery常用API说明/" data-id="cjqyq8anl0004wgtxnesx32oj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -413,7 +495,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/04/hello-world/" data-id="cjqxoo5v90000w4tx0jzz9drq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/04/hello-world/" data-id="cjqyq8amq0001wgtxxub6dafb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -452,6 +534,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/01/16/闭包理解/">闭包理解</a>
+          </li>
         
           <li>
             <a href="/2019/01/15/报文的结构/">报文的结构</a>
