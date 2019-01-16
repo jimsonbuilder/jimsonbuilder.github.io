@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Jimson">
 <meta property="og:description" content="这里只说明web开发相关的数据安全相关的概念，其他信息安全概念以后再说。 1、web开发安全范围  SQL注入； XSS； 跨域脚本攻击……  2、数据安全范围 隐私数据：用户名、密码、银行卡号、身份证号…… 3、解决数据安全的手段  给数据加密，涉及到加密和加密算法的一些概念； 使用更加安全的协议（https）； 其他  4、加密的一些概念  明文：用户定义的、可见可识别的、且通常有意义的字符或">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-16T05:45:23.529Z">
+<meta property="og:updated_time" content="2019-01-16T15:10:03.892Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据安全相关概念">
 <meta name="twitter:description" content="这里只说明web开发相关的数据安全相关的概念，其他信息安全概念以后再说。 1、web开发安全范围  SQL注入； XSS； 跨域脚本攻击……  2、数据安全范围 隐私数据：用户名、密码、银行卡号、身份证号…… 3、解决数据安全的手段  给数据加密，涉及到加密和加密算法的一些概念； 使用更加安全的协议（https）； 其他  4、加密的一些概念  明文：用户定义的、可见可识别的、且通常有意义的字符或">
@@ -114,7 +114,7 @@
 <p>举例：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">明文：loveMyself</span><br><span class="line">密文：FHSJFKSHJFHJSFJKSHJIWIHOQNFN</span><br></pre></td></tr></table></figure>
 <p><strong>5、Base64编码</strong></p>
-<p>它不是一种加密算法，而是一种编码格式。能把任意数据转换为字符串（文本数据）。通常使用它进行编码和解码操作。</p>
+<p>​    它不是一种加密算法，而是一种编码格式。能把任意数据转换为字符串（文本数据）。通常使用它进行编码和解码操作。</p>
 <p>常用的使用Base64进行编码和解码的命令如下：</p>
 <ul>
 <li>base64对字符串进行编码|解码:</li>
@@ -125,15 +125,57 @@
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ openssl base64 -<span class="keyword">in</span> 123.png -out 123.txt</span><br><span class="line">$ openssl base64 -d -<span class="keyword">in</span> 123.txt -out demo.png</span><br></pre></td></tr></table></figure>
 <p><strong>6、其他加密方式</strong></p>
-<p>md5字符串|文件加密:</p>
+<p>​    下面这些用于加密的典型算法用到的是“<u><strong>单向散列函数（哈希）</strong></u>”，他有以下几大特点：</p>
+<ul>
+<li>加密是单向的，即只能加密不能解密；</li>
+<li>加密得到的密文长度总是定长，64位；</li>
+<li>给出的明文相同，密文一定相同；</li>
+<li>给出的明文不同，密文一定不同；</li>
+<li>性能好，效率高。</li>
+</ul>
+<p><strong><u>md5 字符串|文件 加密算法:</u></strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> -n <span class="string">"jimson"</span> | openssl md5</span><br><span class="line">$ openssl md5 123.png</span><br></pre></td></tr></table></figure>
-<p>其他加密：</p>
+<p>注意：加密时，得到的是一个密文（散列值）。对应文件的情况，原来的文件依然存在，只是生产了一个新的加密文件，要真正加密一个文件，命令如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl md5 -out test.txt.md5 test.txt</span><br></pre></td></tr></table></figure>
+<p>注：test.txt.md5指加密后的文件。</p>
+<p><strong><u>其他加密算法：</u></strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SHA1(40)             $  <span class="built_in">echo</span> -n <span class="string">"520lily"</span> | openssl sha -sha1</span><br><span class="line">SHA256(64)           $  <span class="built_in">echo</span> -n <span class="string">"520lily"</span> | openssl sha -sha256</span><br><span class="line">SHA512(128)          $  <span class="built_in">echo</span> -n <span class="string">"520lily"</span> | openssl sha -sha512</span><br></pre></td></tr></table></figure>
+<p>注意：除此之外，还有MD4等典型算法。</p>
+<p>应用场景举例：</p>
+<ul>
+<li>注册和登录，根据的是单向散列函数的单向性；</li>
+<li>验证文件完整性（版权验证），根据的是密文的唯一性；</li>
+<li>云盘秒传，其实并没有秒传，只是提供云盘服务的公司的服务器充当了一个巨大的文件库（数据库），在你上传文件的时候生成散列值，然后拿这个生成的散列值在服务器匹配对应文件的散列值，匹配上了就返回对应文件给你，显示出来，让你误以为瞬间就把文件上传了。</li>
+</ul>
+<p><strong>7、编码和解码代码实现</strong></p>
+<ul>
+<li>编码举例：</li>
+</ul>
+<p>语法：window.btoa(unescape(encodeURIComponent(str)));</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.btoa(<span class="built_in">unescape</span>(<span class="built_in">encodeURIComponent</span>(<span class="string">"520lily"</span>)));</span><br></pre></td></tr></table></figure>
+<ul>
+<li>解码举例：</li>
+</ul>
+<p>语法：descodeURIComponent(escape(window.atob(str)));</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">descodeURIComponent(<span class="built_in">escape</span>(<span class="built_in">window</span>.atob(<span class="string">"NTIwbGlseQ=="</span>)));</span><br></pre></td></tr></table></figure>
+<p><strong>8、对称加密算法</strong></p>
+<p>特点：</p>
+<ul>
+<li>可加密，可解密，使用秘钥即可；</li>
+<li>性能好，效率高。</li>
+</ul>
+<p>算法举例：</p>
+<ul>
+<li>DES，数据加密标准算法；</li>
+<li>3DES；</li>
+<li>AES，高级数据加密标准算法。</li>
+</ul>
+<p>应用场景：加密解密。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/16/数据安全相关概念/" data-id="cjqyrpmv30002s8tx9q12ncrb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/16/数据安全相关概念/" data-id="cjqyrq5ek00029ktxwvxhr8du" class="article-share-link">Share</a>
       
       
     </footer>
