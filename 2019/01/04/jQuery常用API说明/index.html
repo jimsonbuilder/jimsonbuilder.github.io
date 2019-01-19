@@ -7,18 +7,18 @@
   
   <title>jQuery常用API使用记录与说明 | Jimson</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="eq(n)：返回被选元素中带有指定索引号的标签元素； 12$(&quot;button&quot;).eq(0);// 返回索引号为0的button标签  addClass(类名)：给选中的元素添加类名； 1$(&quot;li:first&quot;).addClass(&quot;current&quot;);  removeClass(类名)：给选中的元素去除类名；  hasClass(类名)： 判断指定元素中是否存在对应类名样式，返回布尔类型值，">
+  <meta name="description" content="jQuery常用API使用记录与说明 eq(n)：返回被选元素中带有指定索引号的标签元素； 12$(&quot;button&quot;).eq(0);// 返回索引号为0的button标签  addClass(类名)：给选中的元素添加类名； 1$(&quot;li:first&quot;).addClass(&quot;current&quot;);  removeClass(类名)：给选中的元素去除类名；  hasClass(类名)： 判断指定元素中是">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jQuery常用API使用记录与说明">
 <meta property="og:url" content="http://yoursite.com/2019/01/04/jQuery常用API说明/index.html">
 <meta property="og:site_name" content="Jimson">
-<meta property="og:description" content="eq(n)：返回被选元素中带有指定索引号的标签元素； 12$(&quot;button&quot;).eq(0);// 返回索引号为0的button标签  addClass(类名)：给选中的元素添加类名； 1$(&quot;li:first&quot;).addClass(&quot;current&quot;);  removeClass(类名)：给选中的元素去除类名；  hasClass(类名)： 判断指定元素中是否存在对应类名样式，返回布尔类型值，">
+<meta property="og:description" content="jQuery常用API使用记录与说明 eq(n)：返回被选元素中带有指定索引号的标签元素； 12$(&quot;button&quot;).eq(0);// 返回索引号为0的button标签  addClass(类名)：给选中的元素添加类名； 1$(&quot;li:first&quot;).addClass(&quot;current&quot;);  removeClass(类名)：给选中的元素去除类名；  hasClass(类名)： 判断指定元素中是">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="c:/Users/jimson/AppData/Roaming/Typora/typora-user-images/1546242430541.png">
-<meta property="og:updated_time" content="2019-01-04T13:42:47.849Z">
+<meta property="og:updated_time" content="2019-01-19T09:33:09.968Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jQuery常用API使用记录与说明">
-<meta name="twitter:description" content="eq(n)：返回被选元素中带有指定索引号的标签元素； 12$(&quot;button&quot;).eq(0);// 返回索引号为0的button标签  addClass(类名)：给选中的元素添加类名； 1$(&quot;li:first&quot;).addClass(&quot;current&quot;);  removeClass(类名)：给选中的元素去除类名；  hasClass(类名)： 判断指定元素中是否存在对应类名样式，返回布尔类型值，">
+<meta name="twitter:description" content="jQuery常用API使用记录与说明 eq(n)：返回被选元素中带有指定索引号的标签元素； 12$(&quot;button&quot;).eq(0);// 返回索引号为0的button标签  addClass(类名)：给选中的元素添加类名； 1$(&quot;li:first&quot;).addClass(&quot;current&quot;);  removeClass(类名)：给选中的元素去除类名；  hasClass(类名)： 判断指定元素中是">
 <meta name="twitter:image" content="c:/Users/jimson/AppData/Roaming/Typora/typora-user-images/1546242430541.png">
   
     <link rel="alternate" href="/atom.xml" title="Jimson" type="application/atom+xml">
@@ -92,7 +92,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
+        <h3 id="jQuery常用API使用记录与说明"><a href="#jQuery常用API使用记录与说明" class="headerlink" title="jQuery常用API使用记录与说明"></a>jQuery常用API使用记录与说明</h3><ul>
 <li><p><strong>eq(n)：</strong>返回被选元素中带有指定索引号的标签元素；</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"button"</span>).eq(<span class="number">0</span>);</span><br><span class="line"><span class="comment">// 返回索引号为0的button标签</span></span><br></pre></td></tr></table></figure>
 </li>
@@ -207,12 +207,52 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        $(<span class="keyword">this</span>).on(<span class="string">"diyEvent"</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="comment">// this指window对象</span></span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">"触发自定义事件"</span>);</span><br><span class="line">		&#125;);</span><br><span class="line">        <span class="keyword">var</span> num;</span><br><span class="line">        <span class="keyword">var</span> timer;</span><br><span class="line">        timer = setInterval(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">			$(<span class="string">"button"</span>).trigger(<span class="string">"diyEvent"</span>);</span><br><span class="line">		&#125;,<span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (num &gt;= <span class="number">10</span>) &#123;</span><br><span class="line">        	clearInterval(timer);</span><br><span class="line">        &#125;</span><br><span class="line">	&#125;)</span><br></pre></td></tr></table></figure>
 <p>注：使用定时器触发自定义事件。</p>
 </li>
+<li><p><strong>empty()：</strong>用于删除匹配元素集合中所有子节点。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Hello, <span class="tag">&lt;<span class="name">span</span>&gt;</span>Person<span class="tag">&lt;/<span class="name">span</span>&gt;</span> <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>and person<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"p"</span>).empty();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>JSON.parse(string)：</strong>JSON反序列化方法，用于将传入json字符串转化为对象，该方法<strong>非jq方法</strong>，为原生方法。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = <span class="built_in">JSON</span>.parse(res);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>append(ele)：</strong>向每个匹配的元素内部添加内容。注意此方法是添加内容添加到元素内部后面。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> oA = $(<span class="string">'&lt;a href="javascript:;"&gt;&lt;/a&gt;'</span>);</span><br><span class="line">$(<span class="string">"div"</span>)..append(oA);</span><br></pre></td></tr></table></figure>
+<p>结果：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    ......</span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"javascript:;"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>prepend(ele)：</strong>向每个匹配的元素内部前面添加内容。注意此方法是添加内容添加到元素内部前面。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>I would like to say: <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"p"</span>).prepend(<span class="string">"&lt;b&gt;Hello&lt;/b&gt;"</span>);</span><br></pre></td></tr></table></figure>
+<p>结果：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">b</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">b</span>&gt;</span>I would like to say: <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>ajax()：</strong>jQuery对ajax的封装实现方法之一，用于发送HTTP请求远程服务器数据，返回的是一个XMLHtmlRequest对象。其余两个常用请求方法是get()和post()。使用ajax()处理返回的数据，需要使用回调函数，回调函数具体如下：</p>
+<ul>
+<li><strong>beforeSend</strong> 在发送请求之前调用，并且传入一个XMLHttpRequest作为参数。</li>
+<li><strong>error</strong> 在请求出错时调用。传入XMLHttpRequest对象，描述错误类型的字符串以及一个异常对象（如果有的话）</li>
+<li><strong>dataFilter</strong> 在请求成功之后调用。传入返回的数据以及”dataType”参数的值。并且必须返回新的数据（可能是处理过的）传递给success回调函数。</li>
+<li><strong>success</strong> 当请求之后调用。传入返回后的数据，以及包含成功代码的字符串。</li>
+<li><strong>complete</strong> 当请求完成之后调用这个函数，无论成功或失败。传入XMLHttpRequest对象，以及一个包含成功或错误代码的字符串。</li>
+</ul>
+<p>代码举例：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">    data: <span class="string">"act=add&amp;content="</span> + inputText,</span><br><span class="line">    type: <span class="string">"get"</span>,</span><br><span class="line">    url: <span class="string">"./server/weibo.php"</span>,</span><br><span class="line">    success: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</span><br><span class="line">        textArea.val(<span class="string">""</span>);</span><br><span class="line">        getPageNum();</span><br><span class="line">        pageNum = <span class="number">1</span>;</span><br><span class="line">        Cookie.setCookie(<span class="string">"pageNum"</span>, pageNum);</span><br><span class="line">        getDataByPageNum(pageNum);</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>eval(string)：</strong>非jq方法，js原生方法。作用与JSON.parse()类似。可计算某个字符串，并执行其中的的 JavaScript 代码。string为必须传递的参数。使用其进行JSON字符串的反序列化时，如果JSON字符串是“{}”结构，则需要在string前后加上括号。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arrData = <span class="built_in">eval</span>(<span class="string">"("</span>+string+<span class="string">")"</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>find()：</strong>搜索所有与指定表达式匹配的元素。这个函数是找出正在处理的元素的后代元素的好方法。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">span</span>&gt;</span>, how are you?<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"p"</span>).find(<span class="string">"span"</span>)</span><br></pre></td></tr></table></figure>
+<p>结果：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;span&gt;Hello&lt;<span class="regexp">/span&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>val()：</strong>获取或设置匹配元素的当前值，常用于获取或设置输入元素的文本内容。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> inputText = $(<span class="string">"#submitText"</span>).val();</span><br><span class="line"><span class="keyword">if</span> (inputText.trim() == <span class="string">""</span>) &#123;</span><br><span class="line">    alert(<span class="string">"请输入评论内容！"</span>);</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/04/jQuery常用API说明/" data-id="cjqyrq5ey00059ktxy4g0gteg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/04/jQuery常用API说明/" data-id="cjr3a0fze0001cwtx1hexogtl" class="article-share-link">Share</a>
       
       
     </footer>
