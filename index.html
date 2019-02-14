@@ -66,6 +66,172 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-git常用命令、仓库的创建和项目开发冲突解决等" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/02/14/git常用命令、仓库的创建和项目开发冲突解决等/" class="article-date">
+  <time datetime="2019-02-14T15:39:24.815Z" itemprop="datePublished">2019-02-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="title：git常用命令记录"><a href="#title：git常用命令记录" class="headerlink" title="title：git常用命令记录"></a>title：git常用命令记录</h2><h3 id="一、git基本命令"><a href="#一、git基本命令" class="headerlink" title="一、git基本命令"></a>一、git基本命令</h3><h4 id="1、cd"><a href="#1、cd" class="headerlink" title="1、cd"></a>1、cd</h4><blockquote>
+<p>目录切换命令，结合不同参数实现不同的切换效果，常用参数选项有：</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ..</span><br></pre></td></tr></table></figure>
+<p>注：切换到上级目录。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> 目录名</span><br></pre></td></tr></table></figure>
+<p>注：切换到指定目录。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ../../</span><br></pre></td></tr></table></figure>
+<p>注：可以一下切换多级目录。</p>
+<h4 id="2、pwd"><a href="#2、pwd" class="headerlink" title="2、pwd"></a>2、pwd</h4><blockquote>
+<p>显示当前目录路径的命令。</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">jimson@DESKTOP-6Q68HL2 MINGW64 ~/Desktop</span><br><span class="line">$ <span class="built_in">pwd</span></span><br><span class="line">/c/Users/jimson/Desktop</span><br></pre></td></tr></table></figure>
+<h4 id="3、mkdir"><a href="#3、mkdir" class="headerlink" title="3、mkdir"></a>3、mkdir</h4><blockquote>
+<p>创建目录文件夹</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir dir1</span><br></pre></td></tr></table></figure>
+<p>注：创建单个目录文件夹。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir dir1/dir2</span><br></pre></td></tr></table></figure>
+<p>注：创建多级目录文件夹。</p>
+<h4 id="4、ls"><a href="#4、ls" class="headerlink" title="4、ls"></a>4、ls</h4><blockquote>
+<p>列举目录下的文件或文件夹。</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">jimson@DESKTOP-6Q68HL2 MINGW64 ~/Desktop</span><br><span class="line">$ ls</span><br><span class="line">desktop.ini             笔记整理.lnk*              新建文本文档.txt</span><br><span class="line">git常用命令使用记录.md  其他/                      作业与练习.lnk*</span><br><span class="line">git命令测试/            前端技能点分类练习与记录/</span><br><span class="line">H5寒假任务/             视频教程和代码.lnk*</span><br></pre></td></tr></table></figure>
+<p>注：列出当前目录下的所有文件和文件夹。</p>
+<p>其他常用选项列举如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ ls -a  <span class="comment">#列出当前目录下的所有文件，包括隐藏文件</span></span><br><span class="line">$ ls -l  <span class="comment">#以列表方式列出当前目录下的所有文件，包括文件的创作者和时间等信息</span></span><br><span class="line">$ ls -s  <span class="comment">#列出当前目录下的所有文件，打印文件的大小</span></span><br><span class="line">$ ls -t  <span class="comment">#列出当前目录下的所有文件，按时间排序</span></span><br><span class="line">$ ls -S  <span class="comment">#列出当前目录下的所有文件，包括子目录递归，windows下无效</span></span><br></pre></td></tr></table></figure>
+<h4 id="5、touch"><a href="#5、touch" class="headerlink" title="5、touch"></a>5、touch</h4><blockquote>
+<p>创建文件。</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ touch filename.txt</span><br></pre></td></tr></table></figure>
+<p>注：创建文件filename.txt。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ touch <span class="built_in">test</span>/filename.txt</span><br></pre></td></tr></table></figure>
+<p>注：在目录test下创建文件filename.txt。</p>
+<h4 id="6、wc"><a href="#6、wc" class="headerlink" title="6、wc"></a>6、wc</h4><blockquote>
+<p>获取文件的字数统计信息。</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ wc test.txt</span><br><span class="line">1 2 9 test.txt</span><br><span class="line">$ wc -l test.txt  <span class="comment">#统计行数</span></span><br><span class="line">1 test.txt</span><br><span class="line">$ wc -m test.txt  <span class="comment">#统计字符数</span></span><br><span class="line">9 test.txt</span><br><span class="line">$ wc -w test.txt  <span class="comment">#统计单词数</span></span><br><span class="line">2 test.txt</span><br></pre></td></tr></table></figure>
+<p>注：获取文件test.txt的字数统计信息。</p>
+<h4 id="7、echo"><a href="#7、echo" class="headerlink" title="7、echo"></a>7、echo</h4><blockquote>
+<p>输出字符串。</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> <span class="string">"123"</span> &gt; test.txt  <span class="comment">#向文件test.txt输出字符串123，此为替换</span></span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">"123"</span> &gt;&gt; test.txt  <span class="comment">#向文件test.txt输出字符串123，此为追加</span></span><br></pre></td></tr></table></figure>
+<h4 id="8、cat"><a href="#8、cat" class="headerlink" title="8、cat"></a>8、cat</h4><blockquote>
+<p>查看|创建|合并文件。</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ cat test.txt</span><br><span class="line">123</span><br><span class="line">345</span><br></pre></td></tr></table></figure>
+<p>注：查看test.txt的内容。</p>
+<p>其他常用选项参数如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cat &gt; test.txt</span><br><span class="line">we are family</span><br></pre></td></tr></table></figure>
+<p>注：需要输入内容并保存（回车一次）。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cat 1.txt 2.txt &gt; 3.txt</span><br></pre></td></tr></table></figure>
+<p>注：合并1和2的内容给3。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cat -n a.text  <span class="comment">#输出a.text文件的内容并显示行号(空行会被编号)</span></span><br></pre></td></tr></table></figure>
+<p>注：输出文件a.text的内容，并附上编号。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cat -n b.text &gt;&gt; a.text  <span class="comment">#对b.text文件的内容加上行号然后追加到a.text文件中</span></span><br><span class="line">$ cat -n b.text &gt; a.text   <span class="comment">#对b.text文件的内容加上行号然后替换a.text文件的内容</span></span><br></pre></td></tr></table></figure>
+<p>注：略。</p>
+<h4 id="9、rm"><a href="#9、rm" class="headerlink" title="9、rm"></a>9、rm</h4><blockquote>
+<p>删除文件或目录。</p>
+</blockquote>
+<p>常用选项参数如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ rm a.text      <span class="comment">#删除a.text文件</span></span><br><span class="line">$ rm -i a.text   <span class="comment">#删除文件前会逐一询问确认，输入YES表示删除</span></span><br><span class="line">$ rm -f a.text   <span class="comment">#强制删除a.text文件不会询问确认</span></span><br><span class="line">$ rm -r <span class="built_in">test</span>     <span class="comment">#删除test文件夹以及该目录下面所有文件</span></span><br><span class="line">$ rm -r *        <span class="comment">#删除当前目录下面所有的文件</span></span><br><span class="line">$ rm -rf /*      <span class="comment">#递归删除所有文件(不提醒)</span></span><br></pre></td></tr></table></figure>
+<p>注：最后一个命令慎用！！！</p>
+<h4 id="10、mv"><a href="#10、mv" class="headerlink" title="10、mv"></a>10、mv</h4><blockquote>
+<p>移动文件或重命名。</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ mv index.html ./demo/index.html  <span class="comment">#移动文件到其他目录下</span></span><br><span class="line">$ mv index.html a.html             <span class="comment">#文件重命名</span></span><br></pre></td></tr></table></figure>
+<h4 id="11、clear"><a href="#11、clear" class="headerlink" title="11、clear"></a>11、clear</h4><blockquote>
+<p>清除屏幕。</p>
+</blockquote>
+<h4 id="12、cp"><a href="#12、cp" class="headerlink" title="12、cp"></a>12、cp</h4><blockquote>
+<p>文件拷贝。</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cp test.txt ./<span class="built_in">test</span>/test.txt  <span class="comment">#将文件test.txt拷贝一份到其他目录下</span></span><br></pre></td></tr></table></figure>
+<h4 id="13、其余命令"><a href="#13、其余命令" class="headerlink" title="13、其余命令"></a>13、其余命令</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">history</span>     <span class="comment">#查看操作历史</span></span><br><span class="line">$ curl        <span class="comment">#发送网络请求</span></span><br><span class="line">$ who am i    <span class="comment">#查看当前用户信息(No)</span></span><br><span class="line">$ tab         <span class="comment">#自动补全，连按两次会将所有匹配内容显示出来</span></span><br></pre></td></tr></table></figure>
+<h3 id="二、git仓库操作相关命令"><a href="#二、git仓库操作相关命令" class="headerlink" title="二、git仓库操作相关命令"></a>二、git仓库操作相关命令</h3><blockquote>
+<p>git作为分布式版本管理工具，与集中式版本管理工具（如svn）有不同：</p>
+<ul>
+<li><strong>git远远比svn速度要快；</strong></li>
+<li><strong>结构不同，一个是分布式管理，一个是集中式管理；</strong></li>
+<li><strong>git分布式管理工具工作更灵活，svn集中式管理笨拙，需要联网才能工作。</strong></li>
+</ul>
+<p>两者最大的区别是：在git分布式模式下，每个开发者机器上都有一个服务器仓库，且开发者可以本地提交。</p>
+</blockquote>
+<p>git分布式管理主要命令如下：</p>
+<h4 id="1、本地仓库初始配置"><a href="#1、本地仓库初始配置" class="headerlink" title="1、本地仓库初始配置"></a>1、本地仓库初始配置</h4><p>​    仓库初始化配置，需要使用到以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">$ git init              				   <span class="comment">#仓库初始化(查看隐藏文件夹 工具-文件选项-查看)</span></span><br><span class="line">$ git config user.name jimson              <span class="comment">#配置账户(用户名)</span></span><br><span class="line">$ git config user.email jimson@qq.com      <span class="comment">#配置账户(邮箱)</span></span><br><span class="line">备注：</span><br><span class="line">  [1] 配置的用户信息可以在.git\config文件中进行查看</span><br><span class="line">  [2] 配置时如需进行全局配置请加上--global参数，可在C:\Users\username\.gitconfig中查看配置信息</span><br><span class="line">	$ git config --global user.name jimson        </span><br><span class="line">	$ git config --global user.email jimson@qq.com</span><br><span class="line"></span><br><span class="line">$ git status            <span class="comment">#查看仓库的状态(working tree clear)，工作树是否是清空状态</span></span><br><span class="line">备注（文件的三种状态） </span><br><span class="line">  [1] 已提交   </span><br><span class="line">  [2] 已修改(红色)</span><br><span class="line">  [3] 已暂存(绿色)</span><br><span class="line"></span><br><span class="line">$ git add fileName      <span class="comment">#把指定文件纳入到git(暂存区)</span></span><br><span class="line">$ git commit -m <span class="string">"注释"</span>   <span class="comment">#把暂存区中的修改提交到版本库</span></span><br></pre></td></tr></table></figure>
+<p><strong>注：</strong>对git commit -m 命令的说明：-m参数表示可以直接输入后面的“message”，如果不加 -m参数，那么是不能直接输入message的，而是会调用一个编辑器，一般是vim来让你输入这个message。</p>
+<p>​    message即是我们用来简要说明这次提交的语句。还有另外一种方法，当我们想要提交的message很长或者我们想描述的更清楚更简洁明了一点，我们可以使用这样的格式，如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git commit -m <span class="string">'</span></span><br><span class="line"><span class="string">   message1</span></span><br><span class="line"><span class="string">   message2</span></span><br><span class="line"><span class="string">   message3</span></span><br><span class="line"><span class="string">   '</span></span><br></pre></td></tr></table></figure>
+<p>其他命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git add -A                <span class="comment">#把所有的更改都提交到暂存区</span></span><br><span class="line">$ git add .                 <span class="comment">#把当前目录中所有的更改都提交到暂存区，推荐使用</span></span><br></pre></td></tr></table></figure>
+<p>另外，这里对git文件夹的结构进行说明，git仓库包含三个文件结构：</p>
+<ul>
+<li>工作区：仓库初始化的目录；</li>
+<li>暂缓区（暂存区）：.git文件夹目录；</li>
+<li>版本库。</li>
+</ul>
+<p><strong>git工作原理：</strong>将文件修改先添加到暂存区中，然后commit提交到版本库里。</p>
+<h4 id="2、git版本信息和版本回退"><a href="#2、git版本信息和版本回退" class="headerlink" title="2、git版本信息和版本回退"></a>2、git版本信息和版本回退</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">log</span>                   <span class="comment">#查看仓库版本信息(提交历史)</span></span><br><span class="line">$ git reflog                <span class="comment">#查看仓库版本信息(包含版本回退)</span></span><br><span class="line">$ git reset --hard 哈希值    <span class="comment">#回退(切换)到指定的版本</span></span><br></pre></td></tr></table></figure>
+<p>注：一般使用<strong>git reflog</strong>获得截串之后的哈希值，然后再进行版本回退。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git reflog                <span class="comment">#查看仓库版本信息(包含版本回退)</span></span><br><span class="line">$ git reset --hard 哈希值    <span class="comment">#回退(切换)到指定的版本</span></span><br></pre></td></tr></table></figure>
+<h4 id="3、git分支创建和合并"><a href="#3、git分支创建和合并" class="headerlink" title="3、git分支创建和合并"></a>3、git分支创建和合并</h4><p>​    分支的产生：在主干开发中项目已经存在多个版本，但是之前的版本存在bug，所以需要开启分支，调配人员进行维护修复。</p>
+<p>分支查看：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git branch</span><br></pre></td></tr></table></figure>
+<p>分支创建：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git branch 分支名</span><br></pre></td></tr></table></figure>
+<p>切换分支：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout 分支名</span><br></pre></td></tr></table></figure>
+<p>对bug进行修复之后，切换回主干分支master，然后再合并分支：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git merge 分支名</span><br></pre></td></tr></table></figure>
+<p>对无用分支进行删除：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -d 分支名</span><br></pre></td></tr></table></figure>
+<h4 id="4、git多人开发相关操作命令"><a href="#4、git多人开发相关操作命令" class="headerlink" title="4、git多人开发相关操作命令"></a>4、git多人开发相关操作命令</h4><blockquote>
+<p>多人开发一般分为项目负责人和开发成员两个角色，操作如下：</p>
+</blockquote>
+<p>首先，项目负责人在服务器创建远程项目仓库：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git init --bare</span><br></pre></td></tr></table></figure>
+<p>然后，项目开发人员a、b、c……需要从服务器下载（clone）远程仓库：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> 路径</span><br></pre></td></tr></table></figure>
+<p>项目开发人员在自己本地仓库进行开发，提交代码：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ git status</span><br><span class="line">$ git touch 文件名</span><br><span class="line">$ git <span class="built_in">echo</span> <span class="string">""</span> &gt; 文件名</span><br><span class="line">$ git cat 文件名</span><br><span class="line">$ git status</span><br><span class="line">$ git add .</span><br><span class="line">$ git commit -m <span class="string">"注释"</span></span><br><span class="line">$ git status</span><br><span class="line">......</span><br></pre></td></tr></table></figure>
+<p>项目开发人员把本地仓库项目代码提交（推送）到远程仓库：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push</span><br></pre></td></tr></table></figure>
+<h4 id="5、项目开发中的冲突问题解决"><a href="#5、项目开发中的冲突问题解决" class="headerlink" title="5、项目开发中的冲突问题解决"></a>5、项目开发中的冲突问题解决</h4><blockquote>
+<p>多人开发环境下很容易产生冲突，冲突的出现和解决方法如下：</p>
+</blockquote>
+<p><strong>如果多个项目的团队成员修改了同一个文件,那么就可能产生冲突：</strong></p>
+<ul>
+<li><p>张三：修改lw.txt，然后git commit 提交到本地仓库，接着再git push到远程仓库；</p>
+</li>
+<li><p>老王：修改lw.txt，然后也git commit 提交到本地仓库，接着再git push到远程仓库，此时报错(X)。</p>
+</li>
+</ul>
+<p><strong>解决方法:</strong></p>
+<p>(1) 老王先更新获取最新的仓库信息：git pull；</p>
+<p>(2) 老王git status查看哪个文件发生冲突，打开发生冲突的文件手动的进行处理(覆盖|合并)；</p>
+<p>(3) 老王需要先add到暂缓区，然后commit到本地版本库，再推送到远程的仓库：git push；</p>
+<p>(4) 张三需要更新获取最新的仓库信息保持同步：git pull。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/02/14/git常用命令、仓库的创建和项目开发冲突解决等/" data-id="cjs4sjwrw0003b0txmutf1n51" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-数据安全相关概念" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/01/16/数据安全相关概念/" class="article-date">
@@ -173,7 +339,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/16/数据安全相关概念/" data-id="cjr3a0fzu0004cwtxnerjilt4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/16/数据安全相关概念/" data-id="cjs4sjwt20006b0txqf0cnggv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -255,7 +421,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/16/闭包理解/" data-id="cjr3a0g070005cwtxwlgcwyzz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/16/闭包理解/" data-id="cjs4sjwt00005b0txchu0d5a2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -320,7 +486,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/15/报文的结构/" data-id="cjr3a0fzk0002cwtxijm2jm4c" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/15/报文的结构/" data-id="cjs4sjwrc0002b0txhnrxuk6l" class="article-share-link">Share</a>
       
       
     </footer>
@@ -415,7 +581,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/15/网络编程基本概念/" data-id="cjr3a0fzq0003cwtxwz5cxh9i" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/15/网络编程基本概念/" data-id="cjs4sjwr50001b0txef0hnwi0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -607,7 +773,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/04/jQuery常用API说明/" data-id="cjr3a0fze0001cwtx1hexogtl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/04/jQuery常用API说明/" data-id="cjs4sjwrz0004b0txst1bi9w1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -652,7 +818,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/04/hello-world/" data-id="cjr3a0fuo0000cwtxu2nqvfon" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/04/hello-world/" data-id="cjs4sjwn60000b0txazeu5z2y" class="article-share-link">Share</a>
       
       
     </footer>
@@ -680,7 +846,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li></ul>
     </div>
   </div>
 
@@ -691,6 +857,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/02/14/git常用命令、仓库的创建和项目开发冲突解决等/">(no title)</a>
+          </li>
         
           <li>
             <a href="/2019/01/16/数据安全相关概念/">数据安全相关概念</a>
@@ -706,10 +876,6 @@
         
           <li>
             <a href="/2019/01/15/网络编程基本概念/">网络编程基本概念</a>
-          </li>
-        
-          <li>
-            <a href="/2019/01/04/jQuery常用API说明/">jQuery常用API使用记录与说明</a>
           </li>
         
       </ul>
